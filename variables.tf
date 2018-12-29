@@ -12,7 +12,9 @@
   *   when planning. The names of the variables are not strict. As long as they match the 
   *   naming convention of the variable called in the resource.
   */
-variable "availability_domain" {}
+variable "availability_domain" {
+  description = "The availability domain where the instance should be located. This should be tied to a subnet's availability domain."
+}
 variable "compartment_id" {}
 variable "shape" {}
 variable "subnet_id" {}
