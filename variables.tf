@@ -15,15 +15,28 @@
 variable "availability_domain" {
   description = "The availability domain where the instance should be located. This should be tied to a subnet's availability domain."
 }
-variable "compartment_id" {}
-variable "shape" {}
-variable "subnet_id" {}
-variable "display_name" {}
-variable "source_id" {}
+variable "compartment_id" {
+  description = "OCID of the compartment you want the instance to be provisioned."
+}
+variable "shape" {
+  description = "The type of shape to provision the instance with. Example: 1 OCPU = VM.Shape2.1"
+}
+variable "subnet_id" {
+  description = "The OCID of the subnet the instance will be located."
+}
+variable "display_name" {
+  description = "The name you would like the instance to appear as in the console."
+}
+variable "source_id" {
+  description = "The OCID of the image to provision the instance with."
+}
 variable "source_type" {
   default = "image"
+  description = "The source type of the instance."
 }
-variable "ssh_authorized_keys" {}
+variable "ssh_authorized_keys" {
+  description = "The Public SSH key associated with the authorized user."
+}
 # variable "instance_create_vnic_details_assign_public_ip" {}
 # variable "defined_tags" {}
 # variable "instance_create_vnic_details_display_name" {}
